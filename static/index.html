@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#070a19" /><title>MindState — Wellbeing Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" /><link rel="stylesheet" href="/static/one-page.css" />
+</head>
+<body>
+  <div class="noise"></div><div class="aurora a1"></div><div class="aurora a2"></div><div class="scanline"></div>
+  <main class="app-shell">
+    <header class="header"><a class="logo" href="/"><i>◌</i> MIND<span>STATE</span></a><div class="header-status"><b></b> system calibrated <span>·</span> 01.04.26</div></header>
+    <div class="progress-wrap"><div class="progress-meta"><span>ONE-PAGE SCAN</span><span>LIVE INPUT MATRIX</span></div><div class="progress-track"><i id="progress-fill"></i></div></div>
+
+    <section class="assessment" id="assessment">
+      <aside class="signal-stage">
+        <div class="stage-tag">LIVE WELLBEING MAP</div>
+        <div class="orbital-system" id="orbital-system">
+          <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+          <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
+          <div class="core"><span>⌁</span><small>YOU</small></div>
+        </div>
+        <div class="readouts"><div><span>Digital load</span><b id="digital-readout">42%</b></div><div><span>Recovery</span><b id="recovery-readout">61%</b></div><div><span>Focus balance</span><b id="focus-readout">58%</b></div></div>
+        <p class="stage-note">Your live inputs are translated into a personal wellbeing pattern—not a diagnosis.</p>
+      </aside>
+
+      <section class="form-zone">
+        <form id="prediction-form">
+          <div class="step active" data-step="1">
+            <p class="kicker">Phase 01 <span>·</span> identity signal</p><h1>Let's map your <em>baseline.</em></h1><p class="intro">A few details let the model ground your score in a student context.</p>
+            <div class="field-grid profile-grid">
+              <label>Age<input name="age" type="number" min="1" max="100" value="21" required /></label>
+              <label>Gender<select name="gender"><option value="Female">Female</option><option value="Male" selected>Male</option></select></label>
+              <label class="wide">Where are you based?<input name="country" value="Canada" placeholder="Country" required /></label>
+              <label>Academic level<select name="academic_level"><option>High School</option><option selected>Undergraduate</option><option>Graduate</option></select></label>
+              <label>Primary platform<select name="most_used_platform"><option>Facebook</option><option selected>Instagram</option><option>KakaoTalk</option><option>LINE</option><option>LinkedIn</option><option>Snapchat</option><option>TikTok</option><option>Twitter</option><option>VKontakte</option><option>WeChat</option><option>WhatsApp</option><option>YouTube</option></select></label>
+              <label class="wide">Why do you mostly use it?<select name="purpose_of_use"><option>Education</option><option selected>Entertainment</option><option>Networking</option><option>News</option></select></label>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <p class="kicker">Phase 02 <span>·</span> digital rhythm</p><h1>How does your <em>day flow?</em></h1><p class="intro">Move the controls to build a real-time picture of your online habits and focus.</p>
+            <div class="slider-stack">
+              <div class="metric-slider cyan"><div class="metric-icon">◉</div><div class="metric-copy"><span>Social media time</span><small>average daily scrolling or browsing</small></div><output id="usage-value">4.0 <small>HRS</small></output><input name="avg_daily_usage_hours" id="usage" type="range" min="0" max="16" step="0.1" value="4" /></div>
+              <div class="metric-slider violet"><div class="metric-icon">↗</div><div class="metric-copy"><span>Phone unlocks</span><small>daily check-ins with your device</small></div><output id="unlocks-value">120</output><input name="daily_unlocks" id="unlocks" type="range" min="0" max="500" step="1" value="120" /></div>
+              <div class="metric-slider blue"><div class="metric-icon">✦</div><div class="metric-copy"><span>Intentional study</span><small>focused study each day</small></div><output id="study-value">4.5 <small>HRS</small></output><input name="study_hours" id="study" type="range" min="0" max="16" step="0.1" value="4.5" /></div>
+            </div>
+          </div>
+
+          <div class="step" data-step="3">
+            <p class="kicker">Phase 03 <span>·</span> recovery scan</p><h1>How are you <em>recharging?</em></h1><p class="intro">There are no right answers—only a clearer picture of your current rhythm.</p>
+            <div class="slider-stack compact">
+              <div class="metric-slider green"><div class="metric-icon">⌁</div><div class="metric-copy"><span>Sleep each night</span><small>your usual nightly rest</small></div><output id="sleep-value">7.0 <small>HRS</small></output><input name="sleep_hours_per_night" id="sleep" type="range" min="0" max="14" step="0.1" value="7" /></div>
+              <div class="metric-slider orange"><div class="metric-icon">⌁</div><div class="metric-copy"><span>Physical activity</span><small>movement on a typical day</small></div><output id="activity-value">2.0 <small>HRS</small></output><input name="physical_activity_hours" id="activity" type="range" min="0" max="12" step="0.1" value="2" /></div>
+            </div>
+            <fieldset class="stress-field"><legend>Current stress signal</legend><div class="stress-options"><label><input type="radio" name="stress_level" value="Low" /><span><i>01</i> Low</span></label><label><input type="radio" name="stress_level" value="Medium" checked /><span><i>02</i> Medium</span></label><label><input type="radio" name="stress_level" value="High" /><span><i>03</i> High</span></label><label><input type="radio" name="stress_level" value="Very High" /><span><i>04</i> Very high</span></label></div></fieldset>
+          </div>
+          <div class="form-nav"><span class="disclaimer">For reflection only · not clinical advice</span><button type="submit" id="submit-button" class="primary">Run my scan <b>↗</b></button></div>
+        </form>
+      </section>
+    </section>
+    <footer><span>◌</span> MINDSTATE SYSTEM · YOUR DATA STAYS IN THIS SESSION</footer>
+  </main>
+
+  <section class="result-screen" id="result-panel" hidden aria-live="polite">
+    <div class="result-noise"></div><button class="close-result" type="button" aria-label="Close result">×</button>
+    <p class="result-kicker">MINDSTATE // PERSONAL SIGNAL REPORT</p><h2>Assessment <em>complete.</em></h2>
+    <div class="result-grid"><div class="score-interface"><svg class="score-ring" viewBox="0 0 260 260"><defs><linearGradient id="ring-gradient" x1="0" x2="1"><stop stop-color="#58f6e1"/><stop offset="1" stop-color="#7b65ff"/></linearGradient></defs><circle cx="130" cy="130" r="105"/><circle id="ring-progress" cx="130" cy="130" r="105"/></svg><div class="score-center"><span>WELLBEING</span><strong id="score">0.00</strong><small>OUT OF 10</small></div></div><div class="report-copy"><div class="report-label">MODEL OBSERVATION</div><p id="result-message"></p><div class="country-note" id="country-note"></div><div class="mini-bars"><div><span>Digital rhythm</span><i id="bar-digital"></i></div><div><span>Recovery reserve</span><i id="bar-recovery"></i></div><div><span>Focus signal</span><i id="bar-focus"></i></div></div></div></div>
+    <button class="restart" type="button" id="try-again">← Recalibrate my inputs</button>
+  </section>
+  <script src="/static/app.js"></script>
+</body></html>

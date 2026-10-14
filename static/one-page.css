@@ -1,0 +1,8 @@
+/* One-page assessment layout overrides. */
+.progress-track i { width: 100%; }
+.step { display: block; height: auto; }
+.step + .step { margin-top: 31px; padding-top: 30px; border-top: 1px solid var(--line); }
+.step:not(:first-child) h1 { font-size: 1.55rem; letter-spacing: -.04em; }
+.step:not(:first-child) .intro { margin: 10px 0 19px; font-size: .78rem; }
+.form-nav { position: static; padding: 25px 0 4px; }
+@media (max-width: 850px) { .form-zone { min-height: 0; } }
